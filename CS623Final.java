@@ -76,23 +76,11 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
     			stmt.executeUpdate("INSERT INTO stock VALUES ('p2', 'd2', 2000)");
     			
     		}
-    		catch (SQLException e) {
-    			System.out.println("An exception was thrown");
-    			
-    			//For atomicity
-    			con.rollback();
-    			stmt.close();
-    			con.close();
-    			return;
-    		}
     		
     		
     		
     		//Deleting product p1
-    			
-    		try {
-    			stmt = con.createStatement();
-
+    		
     			System.out.println("---BEFORE DELETION---");
     			ResultSet rs = stmt.executeQuery("Select * from product");
     			while(rs.next()) {
@@ -127,25 +115,11 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
     				System.out.println("#prod:" + rs3.getString("prodid")  +"\tdepid:"  +rs3.getString ("depid") + "\tQuantity:" +rs3.getInt("quantity"));
         				
     			}
-    		}
-
-    			catch (SQLException e) {
-        			System.out.println("An exception was thrown");
-        			
-        			//For atomicity
-        			con.rollback();
-        			stmt.close();
-        			con.close();
-        			return;
-        		}
-        		
+    			
     		
     		//deleting depid = d1
     		
-    		try {
-    				
-    			stmt = con.createStatement();
-
+    		
     			System.out.println();
     			System.out.println("---AFTER DELETION of depid d1---");
     			stmt.executeUpdate("Delete FROM depot WHERE depid = 'd1'");
