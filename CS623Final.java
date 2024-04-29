@@ -75,7 +75,7 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
     			stmt.executeUpdate("INSERT INTO stock VALUES ('p2', 'd1', -400)");
     			stmt.executeUpdate("INSERT INTO stock VALUES ('p2', 'd2', 2000)");
     			
-    		}
+    		
     		
     		
     		
