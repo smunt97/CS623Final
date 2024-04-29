@@ -11,7 +11,7 @@ public class CS623Final {
     
 public static void main(String args[]) throws ClassNotFoundException, SQLException 
     	{
-			//Load Postgresql driver
+		//Load Postgresql driver
     		Class.forName("org.postgresql.Driver");
     		
     		//Connect to the default database with credentials
@@ -31,7 +31,7 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
     			// Create statement object
     			stmt = con.createStatement();
     			
-    		//
+    	
     		 	//Create Table product
     			stmt.executeUpdate("CREATE TABLE product(prodid VARCHAR(5), pname Char(20), price Decimal)");
     		 	
@@ -79,8 +79,7 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
     		
     		
     		
-    		//Deleting product p1
-    		
+    			//Showing all the attributes before deletion
     			System.out.println("---BEFORE DELETION---");
     			ResultSet rs = stmt.executeQuery("Select * from product");
     			while(rs.next()) {
@@ -100,7 +99,7 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
         				
     			}
     			
-    			
+    			//Deletin #prodid p1
     			System.out.println();
     			System.out.println("---AFTER DELETION of prodid p1---");
     			stmt.executeUpdate("Delete FROM product WHERE prodid = 'p1'");
@@ -117,9 +116,7 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
     			}
     			
     		
-    		//deleting depid = d1
-    		
-    		
+    			//deleting depid = d1
     			System.out.println();
     			System.out.println("---AFTER DELETION of depid d1---");
     			stmt.executeUpdate("Delete FROM depot WHERE depid = 'd1'");
@@ -149,9 +146,6 @@ public static void main(String args[]) throws ClassNotFoundException, SQLExcepti
     		con.commit();
     		stmt.close();
     		con.close();
-    		
-    		
-    		
     		
     	
     		System.out.println("connection created!");
