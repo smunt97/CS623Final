@@ -15,9 +15,9 @@ This is a CS623 Database Management System Final Project using PostGresql and Ja
 4. Durability
 
 # Schemas
-Product(#prod, pname, price)
-Depot(#dep, addr, volume)
-Stock(#prod, #dep, quantity)
+Product(#prod, pname, price)</br>
+Depot(#dep, addr, volume)</br>
+Stock(#prod, #dep, quantity)</br>
 
 # Transactions Implemented
 1. The product p1 is deleted from Product and Stock.
